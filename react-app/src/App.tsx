@@ -4,7 +4,7 @@ function App() {
 
   return (
     <div>
-      <Button>
+      <Button onClick={() => console.log('Clicked')}>
         <span>Solution</span>
       </Button>
     </div>
