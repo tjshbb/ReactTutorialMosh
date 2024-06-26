@@ -1,4 +1,5 @@
 import { useState } from "react";
+import produce from "immer";
 
 function App() {
 
@@ -50,6 +51,12 @@ function App() {
     //update a value in an array, object
     setBugs(bugs.map(bug => bug.id === 1 ? { ...bug, fixed: true } : bug));
 
+    //updating using immer
+    setBugs(produce(draft => {
+      const bug = draft.find(bug => bug.id === 2);
+      if (bug) bug.fixed = true;
+    }))
+
     //add a value to an array
     setTags([...tags, 'exciting']);
 
@@ -61,7 +68,10 @@ function App() {
   };
 
   return (
-    <div></div>
+    <div>
+      {bugs.map(bug => <p key={bug.id}>{bug.title} {bug.fixed ? 'Fixed' : 'New'}</p>)}
+      <button onClick={handleClick}>Click Me</button>
+    </div>
   );
 }
 
