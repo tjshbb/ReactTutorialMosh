@@ -1,5 +1,5 @@
 import { useState } from "react";
-import syles, { styled } from 'styled-components';
+import styles, { styled } from 'styled-components';
 
 const List = styled.ul`
     list-style: none;

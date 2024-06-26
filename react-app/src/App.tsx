@@ -1,11 +1,12 @@
 import { useState } from "react";
-// import Button from "./components/Button";
-// import Alert from "./components/Alert";
+import Button from "./components/Button";
+import Like from "./components/Like";
+import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
-import './App.css';
+import { BsFillCalendarFill } from "react-icons/bs";
 
 function App() {
-  // const [alertVisible, setAlertVisibility] = useState(false);
+  const [alertVisible, setAlertVisibility] = useState(false);
   let items = ["New York", "San Francisco", "Tokyo", "London", "St. Louis"]
 
   const handleSelectItem = (item: string) => {
@@ -13,15 +14,20 @@ function App() {
   }
 
   return (
-    // <div>
-    //   {alertVisible && <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>}
-    //   <Button onClick={() => setAlertVisibility(true)}>
-    //     <span>Alert Me</span>
-    //   </Button>
-    // </div>
-    <div>
-      <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
-    </div>
+    <>
+      <div>
+        <Like onClick={() => console.log("clicked")}></Like>
+      </div>
+      <div>
+        <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
+      </div>
+      <div>
+        {alertVisible && <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>}
+        <Button onClick={() => setAlertVisibility(true)}>
+          <span>Alert Me</span>
+        </Button>
+      </div>
+    </>
   );
 }
 
