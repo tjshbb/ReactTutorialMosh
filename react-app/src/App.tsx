@@ -1,9 +1,6 @@
 import { useState } from "react";
-import Button from "./components/Button";
 import Like from "./components/Like";
-import Alert from "./components/Alert";
 import ListGroup from "./components/ListGroup";
-import { BsFillCalendarFill } from "react-icons/bs";
 
 function App() {
   const [alertVisible, setAlertVisibility] = useState(false);
