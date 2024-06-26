@@ -1,5 +1,4 @@
 import { useState } from "react";
-import styles from './ListGroup.css'
 import syles, { styled } from 'styled-components';
 
 const List = styled.ul`
