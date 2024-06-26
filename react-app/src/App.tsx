@@ -16,16 +16,10 @@ function App() {
   return (
     <>
       <div>
+        <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem}></ListGroup>
+      </div>
+      <div>
         <Like onClick={() => console.log("clicked")}></Like>
-      </div>
-      <div>
-        <ListGroup items={items} heading="Cities" onSelectItem={handleSelectItem} />
-      </div>
-      <div>
-        {alertVisible && <Alert onClose={() => setAlertVisibility(false)}>My Alert</Alert>}
-        <Button onClick={() => setAlertVisibility(true)}>
-          <span>Alert Me</span>
-        </Button>
       </div>
     </>
   );
