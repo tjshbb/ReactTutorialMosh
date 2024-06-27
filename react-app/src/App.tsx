@@ -38,6 +38,15 @@ function App() {
     'cheerful'
   ]);
 
+  //object, object
+  const [customer, setCustomer] = useState({
+    name: 'John',
+    address: {
+      city: 'San Francisco',
+      zipCode: 94111
+    }
+  });
+
   const handleClick = () => {
     // update a value in an object, object
     setGame({ ...game, player: { ...game.player, name: 'Bob' } });
@@ -65,6 +74,9 @@ function App() {
 
     //update a value in an array
     setTags(tags.map(tag => tag === 'happy' ? 'happiness' : tag))
+
+    //update a value in an object, object
+    setCustomer({ ...customer, address: { ...customer.address, zipCode: 63104 } });
   };
 
   return (
